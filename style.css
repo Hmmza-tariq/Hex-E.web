@@ -1,0 +1,23 @@
+* {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 20px;
+  line-height: 1.5;
+  color: #545454;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+
+}
+body {
+  padding: 0px;
+  margin: 0px;
+  text-align: left;
+  width: 69vw;
+
+}
+.target-text {
+  font-weight: bold;
+}
+
+fieldset {
+  margin-bottom: 8px;
+}
