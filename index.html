@@ -1,4 +1,124 @@
 <!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+  }
+
+  .header {
+    background-color: #6495ED;
+    padding: 30px;
+    text-align: center;
+  }
+
+  .header h1 {
+    font-size: 36px;
+    color: white;
+  }
+
+  .models{
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 18px;
+  }
+  .input-section {
+    background-color: #e5e5e5;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .input-section input[type="text"] {
+    padding: 10px;
+    font-size: 18px;
+    width: 80%;
+    margin-bottom: 20px;
+  }
+
+  #button-request {
+    padding: 10px 20px;
+    background-color: #6495ED;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+
+  .output-section {
+    background-color: #e5e5e5;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .output-section div {
+      font-size: 18px;
+      resize: none;
+    }
+
+  .request-section p {
+    font-size: 13px;
+    height: 20px;
+    margin-bottom: 20px;
+    resize: none;
+  }
+</style>
+  </head>
+  <body>
+    <div class="header">
+      <h1>Hex-E</h1>
+    </div>
+    <div class="input-section">
+      <form>
+        <input type="text"  id="api-key" placeholder="Enter your API here">
+        <input type="text" id="text-prompt"  placeholder="Enter your input here">
+        <p class="models">
+            <div>
+                Image count (1-4): <input id="image-count" value="1">
+            </div>
+    
+            <div>
+                Image size:
+            </div>
+    
+            <div>
+                <input type="radio" id="radio-256" name="image-size" value="256" checked>
+                <label for="256">256</label>
+            </div>
+            <div>
+                <input type="radio" id="radio-512" name="image-size" value="512">
+                <label for="512">512</label>
+            </div>
+            <div>
+                <input type="radio" id="radio-1024" name="image-size" value="1024">
+                <label for="1024">1024</label>
+            </div>
+        </span></p>
+        <div>
+            <button  type="submit" id="button-request">Submit</button>
+        </div>
+
+        </form>
+    </div>
+    
+ 
+    <div class="output-section">
+        
+        <div>
+            <div id="request-status">No request performed yet</div>
+        </div>
+         <br>
+        <legend>Images</legend>
+        <div id="image-container"></div>
+    </div>
+  </body>
+  <script type="text/javascript" src="script.js"></script>
+</html>
+<!-- <!DOCTYPE html>
 
 <html>
     <header>
@@ -57,11 +177,11 @@
         <fieldset>
             <legend>Images</legend>
 
-            <!-- Response images will be added here -->
+            <!-- Response images will be added here 
             <div id="image-container"></div>
 
         </fieldset>
 
         <script type="text/javascript" src="script.js"></script>
     </body>
-</html>
+</html> -->
