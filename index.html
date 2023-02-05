@@ -8,18 +8,19 @@
       }
   body {
     font-family: Arial, sans-serif;
-    background-color: #f2f2f2;
+    background-color: #018685;
+    color: #00DBC7;
   }
 
   .header {
-    background-color: #6495ED;
+    background-color: #018685;
     padding: 30px;
     text-align: center;
   }
 
   .header h1 {
     font-size: 36px;
-    color: white;
+    color: #00DBC7;
   }
 
   .models{
@@ -28,7 +29,7 @@
     font-size: 18px;
   }
   .input-section {
-    background-color: #e5e5e5;
+    background-color: #00756A;
     padding: 20px;
     text-align: center;
   }
@@ -38,19 +39,22 @@
     font-size: 18px;
     width: 80%;
     margin-bottom: 20px;
+    color: #00DBC7;    
+    background-color: #009586;
+    border: 1px white;
   }
 
   #button-request {
     padding: 10px 20px;
-    background-color: #6495ED;
-    color: white;
+    background-color: #00756A;
+    color: #00DBC7;
     border: none;
     cursor: pointer;
     margin-top: 20px;
   }
 
   .output-section {
-    background-color: #e5e5e5;
+    background-color: #00756A;
     padding: 20px;
     text-align: center;
   }
@@ -118,70 +122,3 @@
   </body>
   <script type="text/javascript" src="script.js"></script>
 </html>
-<!-- <!DOCTYPE html>
-
-<html>
-    <header>
-        <title>Hex-E</title>
-
-        <link rel="stylesheet" type="text/css" href="styles.css">
-    </header>
-
-    <body>
-        <fieldset>
-            <legend>Setup</legend>
-            <div>
-                Please enter your OpenAI API Key: <input id="api-key" value="YOUR-API-KEY-HERE">
-            </div>
-        </fieldset>
-
-        <fieldset>
-            <legend>Request parameters</legend>
-            <div>
-                <textarea id="text-prompt" rows="4" cols="52">An isometric view of a miniature city, tilt shift, bokeh, voxel, vray render, high detail</textarea>
-            </div>
-    
-            <div>
-                Image count (1-4): <input id="image-count" value="1">
-            </div>
-    
-            <div>
-                Image size:
-            </div>
-    
-            <div>
-                <input type="radio" id="radio-256" name="image-size" value="256" checked>
-                <label for="256">256</label>
-            </div>
-            <div>
-                <input type="radio" id="radio-512" name="image-size" value="512">
-                <label for="512">512</label>
-            </div>
-            <div>
-                <input type="radio" id="radio-1024" name="image-size" value="1024">
-                <label for="1024">1024</label>
-            </div>
-    
-            <div>
-                <button id="button-request">Request</button>
-            </div>
-        </fieldset>
-
-        <fieldset>
-            <legend>Request Status</legend>
-            <div>
-                <p id="request-status">No request performed yet</p>
-            </div>
-        </fieldset>
-
-        <fieldset>
-            <legend>Images</legend>
-
-            <!-- Response images will be added here 
-            <div id="image-container"></div>
-
-        </fieldset>
-
-        <script type="text/javascript" src="script.js"></script>
-    </body>
-</html> -->
