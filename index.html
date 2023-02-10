@@ -1,124 +1,163 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
-      * {
-        box-sizing: border-box;
-      }
-  body {
-    font-family: Arial, sans-serif;
-    background-color: #018685;
-    color: #00DBC7;
-  }
 
-  .header {
-    background-color: #018685;
-    padding: 20px;
-    text-align: center;
-  }
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-  .header h1 {
-    font-size: 36px;
-    color: #ffffff;
-  }
+    html {
+      /* ff 3.6+ */
+      background: -moz-linear-gradient(180deg, rgba(76, 175, 80, 1) 0%, rgba(0, 150, 136, 1) 50%, rgba(49, 220, 255, 1) 100%);
 
-  .models{
-    display: flex;
-    flex-wrap: wrap;
-    font-size: 18px;
-  }
-  .input-section {
-    background-color: #008074;
-    padding: 20px;
-    text-align: center;
-  }
+      /* safari 5.1+,chrome 10+ */
+      background: -webkit-linear-gradient(180deg, rgba(76, 175, 80, 1) 0%, rgba(0, 150, 136, 1) 50%, rgba(49, 220, 255, 1) 100%);
 
-  .input-section input[type="text"] {
-    padding: 10px;
-    font-size: 18px;
-    width: 80%;
-    margin-bottom: 20px;
-    color: #ffffff;
-    background-color: #009586;
-    border: 1px white;
-  }
+      /* opera 11.10+ */
+      background: -o-linear-gradient(180deg, rgba(76, 175, 80, 1) 0%, rgba(0, 150, 136, 1) 50%, rgba(49, 220, 255, 1) 100%);
 
-  #button-request {
-    padding: 10px 20px;
-    background-color: #00756A;
-    color: #00DBC7;
-    border: none;
-    cursor: pointer;
-    margin-top: 20px;
-  }
+      /* ie 6-9 */
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#31DCFF', endColorstr='#4CAF50', GradientType=1);
 
-  .output-section {
-    background-color: #00756A;
-    padding: 20px;
-    text-align: center;
-  }
-  
-  .output-section div {
+      /* ie 10+ */
+      background: -ms-linear-gradient(180deg, rgba(76, 175, 80, 1) 0%, rgba(0, 150, 136, 1) 50%, rgba(49, 220, 255, 1) 100%);
+
+      /* global 94%+ browsers support */
+      background: linear-gradient(180deg, rgba(76, 175, 80, 1) 0%, rgba(0, 150, 136, 1) 50%, rgba(49, 220, 255, 1) 100%);
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+
+      /* ff 3.6+ */
+      background: -moz-linear-gradient(180deg, rgba(76, 175, 80, 1) 0%, rgba(0, 150, 136, 1) 50%, rgba(49, 220, 255, 1) 100%);
+
+      /* safari 5.1+,chrome 10+ */
+      background: -webkit-linear-gradient(180deg, rgba(76, 175, 80, 1) 0%, rgba(0, 150, 136, 1) 50%, rgba(49, 220, 255, 1) 100%);
+
+      /* opera 11.10+ */
+      background: -o-linear-gradient(180deg, rgba(76, 175, 80, 1) 0%, rgba(0, 150, 136, 1) 50%, rgba(49, 220, 255, 1) 100%);
+
+      /* ie 6-9 */
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#31DCFF', endColorstr='#4CAF50', GradientType=1);
+
+      /* ie 10+ */
+      background: -ms-linear-gradient(180deg, rgba(76, 175, 80, 1) 0%, rgba(0, 150, 136, 1) 50%, rgba(49, 220, 255, 1) 100%);
+
+      /* global 94%+ browsers support */
+      background: linear-gradient(180deg, rgba(76, 175, 80, 1) 0%, rgba(0, 150, 136, 1) 50%, rgba(49, 220, 255, 1) 100%);
+      background-repeat: no-repeat;
+      color: #00DBC7;
+    }
+
+    .header {
+      background-color: #018685;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .header h1 {
+      font-size: 36px;
+      color: #ffffff;
+    }
+
+    .models {
+      display: flex;
+      flex-wrap: wrap;
+      font-size: 18px;
+
+    }
+
+    .input-section {
+      background-color: #008074;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .input-section input[type="text"] {
+      padding: 10px;
+      font-size: 18px;
+      width: 80%;
+      margin-bottom: 20px;
+      color: #ffffff;
+      background-color: #009586;
+      border: 1px white;
+    }
+
+    #button-request {
+      padding: 10px 20px;
+      background-color: #00756A;
+      color: #00DBC7;
+      border: none;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+
+    .output-section {
+      background-color: #00756A;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .output-section div {
       font-size: 18px;
       resize: none;
     }
 
-  .request-section p {
-    font-size: 13px;
-    height: 20px;
-    margin-bottom: 20px;
-    resize: none;
-  }
-</style>
-  </head>
-  <body>
-    <div class="header">
-      <h1>Hex-E</h1>
-    </div>
-    <div class="input-section">
-      <form>
-        <input type="text"  id="api-key" placeholder="Enter your API here">
-        <input type="text" id="text-prompt"  placeholder="Enter your input here">
-        <p class="models">
-            <div>
-                Image count (1-4): <input id="image-count" value="1">
-            </div>
-    
-            <div>
-                Image size:
-            </div>
-    
-            <div>
-                <input type="radio" id="radio-256" name="image-size" value="256" checked>
-                <label for="256">256</label>
-            </div>
-            <div>
-                <input type="radio" id="radio-512" name="image-size" value="512">
-                <label for="512">512</label>
-            </div>
-            <div>
-                <input type="radio" id="radio-1024" name="image-size" value="1024">
-                <label for="1024">1024</label>
-            </div>
-        </span></p>
-        <div>
-            <button  type="submit" id="button-request">Submit</button>
-        </div>
+    .request-section p {
+      font-size: 13px;
+      height: 20px;
+      margin-bottom: 20px;
+      resize: none;
+    }
+  </style>
+</head>
 
-        </form>
+<body>
+  <div class="header">
+    <h1>Chex</h1>
+  </div>
+  <div class="input-section">
+    <form>
+      <input type="text" id="api-key" placeholder="Enter your API here">
+      <input type="text" id="text-prompt" placeholder="Enter your input here">
+      <p class="models">
+      <div>Text Model:</div>
+      <span>
+        <input type="radio" id="model-davinci" name="text-model" value="text-davinci-003">
+        <label for="text-davinci-003">Davinci (better)</label>
+      </span>
+      <span>
+        <input type="radio" id="model-curie" name="text-model" value="text-curie-001">
+        <label for="text-curie-001">Curie</label>
+      </span>
+      <span>
+        <input type="radio" id="model-babbage" name="text-model" value="text-babbage-001">
+        <label for="text-babbage-001">Babbage</label>
+      </span>
+      <span>
+        <input type="radio" id="model-ada" name="text-model" value="text-ada-001" checked>
+        <label for="text-ada-001">Ada (faster)</label>
+      </span></p>
+      <div>
+        <button type="submit" id="button-request">Submit</button>
+      </div>
+
+    </form>
+  </div>
+
+
+  <div class="output-section">
+
+    <div>
+      <div id="request-status">No request performed yet</div>
     </div>
-    
- 
-    <div class="output-section">
-        
-        <div>
-            <div id="request-status">No request performed yet</div>
-        </div>
-         <br>
-        <legend>Images</legend>
-        <div id="image-container"></div>
-    </div>
-  </body>
-  <script type="text/javascript" src="script.js"></script>
+    <br>
+    <div id="text-container"></div>
+  </div>
+</body>
+<script type="text/javascript" src="script.js"></script>
+
 </html>
