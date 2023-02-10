@@ -65,7 +65,8 @@
       border-radius: 10px;
     }
 
-    #button-request {
+    #button-request,
+    #download-button {
       padding: 10px 20px;
       background-color: #00756A;
       color: #00DBC7;
@@ -74,6 +75,13 @@
       margin-bottom: 10px;
       border: 3px solid #004D4D;
       border-radius: 12px;
+    }
+
+    #download-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: fit-content;
     }
 
     .radio-container {
@@ -104,7 +112,11 @@
       font-size: 18px;
       resize: none;
       color: #00DBC7;
+    }
 
+    #image-container img {
+      width: 50vw;
+      object-fit: cover;
     }
 
     .request-section p {
@@ -169,6 +181,7 @@
     <legend>Images</legend>
     <div id="image-container"></div>
   </div>
+  <button id="download-button">Download Image</button>
 </body>
 <script type="text/javascript" src="script.js"></script>
 
