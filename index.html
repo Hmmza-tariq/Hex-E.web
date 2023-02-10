@@ -66,7 +66,8 @@
     }
 
     #button-request,
-    #download-button {
+    #download-button,
+    #minimize-button {
       padding: 10px 20px;
       background-color: #00756A;
       color: #00DBC7;
@@ -77,7 +78,7 @@
       border-radius: 12px;
     }
 
-    #download-button {
+    #download-button,#minimize-button {
       position: fixed;
       bottom: 20px;
       right: 20px;
@@ -181,7 +182,9 @@
     <legend>Images</legend>
     <div id="image-container"></div>
   </div>
-  <button id="download-button">Download Image</button>
+  <button id="download-button">Preview Image</button>
+  <button id="minimize-button" style="display: none;">Minimize Image</button>
+
 </body>
 <script type="text/javascript" src="script.js"></script>
 
