@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+<title>Hex-E</title>
 
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,41 +11,57 @@
 
     body {
       font-family: Arial, sans-serif;
-      background-color: #4CAF50;
-      color: #00DBC7;
+      background: -moz-linear-gradient(180deg, rgba(76, 175, 80, 1) 0%, rgba(0, 150, 136, 1) 50%, rgba(49, 220, 255, 1) 100%);
+      background: -webkit-linear-gradient(180deg, rgba(76, 175, 80, 1) 0%, rgba(0, 150, 136, 1) 50%, rgba(49, 220, 255, 1) 100%);
+      background: -o-linear-gradient(180deg, rgba(76, 175, 80, 1) 0%, rgba(0, 150, 136, 1) 50%, rgba(49, 220, 255, 1) 100%);
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#31DCFF', endColorstr='#4CAF50', GradientType=1);
+      background: -ms-linear-gradient(180deg, rgba(76, 175, 80, 1) 0%, rgba(0, 150, 136, 1) 50%, rgba(49, 220, 255, 1) 100%);
+      background: linear-gradient(180deg, rgba(76, 175, 80, 1) 0%, rgba(0, 150, 136, 1) 50%, rgba(49, 220, 255, 1) 100%);
+      color: #004D4D;
+      width: 50%;
+      margin: 0 auto;
+      text-align: center;
     }
 
     .header {
       background-color: #018685;
-      padding: 20px;
+      padding: 10px 20px;
+      border: 2px solid #004D4D;
+      border-radius: 20px;
+      width: fit-content;
       text-align: center;
+      margin: 0 auto;
+      height: fit-content;
     }
 
     .header h1 {
-      font-size: 36px;
-      color: #ffffff;
+      font-size: 20px;
+      color: #00DBC7;
     }
 
     .models {
       display: flex;
-      flex-wrap: wrap;
       font-size: 18px;
     }
 
     .input-section {
-      background-color: #008074;
-      padding: 20px;
+      background-color: #ffffff5e;
+      backdrop-filter: blur(8px);
       text-align: center;
+      padding: 10px;
+      margin: 10px;
+      border: 2px solid #004D4D;
+      border-radius: 20px;
     }
 
     .input-section input[type="text"] {
       padding: 10px;
       font-size: 18px;
       width: 80%;
-      margin-bottom: 20px;
-      color: #ffffff;
+      color: #00DBC7;
       background-color: #009586;
-      border: 1px white;
+      border: 1px solid #004D4D;
+      border-radius: 10px;
     }
 
     #button-request {
@@ -53,24 +70,32 @@
       color: #00DBC7;
       border: none;
       cursor: pointer;
-      margin-top: 20px;
+      margin-bottom: 10px;
+      border: 3px solid #004D4D;
+      border-radius: 12px;
     }
 
     .output-section {
+      color: #00DBC7;
       background-color: #00756A;
-      padding: 20px;
       text-align: center;
+      padding: 10px;
+      margin: 10px;
+      border: 2px solid #004D4D;
+      border-radius: 20px;
     }
 
     .output-section div {
       font-size: 18px;
       resize: none;
+      color: #00DBC7;
+
     }
 
     .request-section p {
       font-size: 13px;
       height: 20px;
-      margin-bottom: 20px;
+      border: 2px solid white;
       resize: none;
     }
   </style>
@@ -80,37 +105,39 @@
   <div class="header">
     <h1>Hex-E</h1>
   </div>
-  <div class="input-section">
-    <form>
-      <input type="text" id="api-key" placeholder="Enter your API here">
-      <input type="text" id="text-prompt" placeholder="Enter your input here">
-      <p class="models">
-      <div>
+  <form>
+    <div class="input-section">
+      <h3>API Input</h3>
+      <input type="text" id="api-key" placeholder="Enter your OpenAi API">
+    </div>
+    <div class="input-section">
+      <h3>Prompt Input</h3>
+      <input type="text" id="text-prompt" placeholder="eg: dragon on sun">
+    </div>
+    <p class="models">
+    <div class="input-section">
+      <h3>
         Image count (1-4): <input id="image-count" value="1">
-      </div>
-
-      <div>
-        Image size:
-      </div>
-
-      <div>
+      </h3>
+      <h3> Image size: </h3>
+      <span>
         <input type="radio" id="radio-256" name="image-size" value="256" checked>
-        <label for="256">256</label>
-      </div>
-      <div>
+        <label for="256">256 </label>
+      </span><br>
+      <span>
         <input type="radio" id="radio-512" name="image-size" value="512">
-        <label for="512">512</label>
-      </div>
-      <div>
+        <label for="512">512 </label>
+      </span><br>
+      <span>
         <input type="radio" id="radio-1024" name="image-size" value="1024">
         <label for="1024">1024</label>
-      </div>
+      </span><br>
       </span></p>
       <div>
         <button type="submit" id="button-request">Submit</button>
       </div>
 
-    </form>
+  </form>
   </div>
 
 
@@ -119,7 +146,8 @@
     <div>
       <div id="request-status">No request performed yet</div>
     </div>
-    <br>
+  </div>
+  <div class="output-section">
     <legend>Images</legend>
     <div id="image-container"></div>
   </div>
