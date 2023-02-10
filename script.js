@@ -118,3 +118,16 @@ function addImages(jsonData, prompt) {
 
   reqStatus.innerHTML = jsonData.data.length +' images received for "' + prompt + '"';
 }
+
+document.getElementById("download-button").addEventListener("click", function() {
+  var image = document.getElementById("image-container").firstChild;
+  var link = document.createElement("a");
+  link.download = "image.png";
+  link.href = image.src;
+  if (typeof link.download === 'undefined') {
+    window.open(image.src);
+  } else {
+    link.click();
+  }
+});
+
